@@ -1,52 +1,56 @@
 # Mean Normalization and Data Separation
 
-This mini-project demonstrates how to preprocess data with NumPy for machine learning. The notebook focuses on mean normalization and splitting data into training, cross-validation, and test sets.
+This mini-project explores essential data preprocessing techniques used in machine learning with NumPy. It demonstrates how to normalize feature data and organize it into training, cross-validation, and test sets for more reliable model development and evaluation.
 
-## Project overview
-The code is organized around a simple preprocessing workflow:
-1. Start with the original dataset
-2. Normalize the feature values
-3. Shuffle the row indices
-4. Calculate split points
-5. Separate the data into training, cross-validation, and test sets
+## Overview
+Preparing data is a critical step in any machine learning workflow. In this notebook, the dataset is first normalized to make feature values more comparable, then randomly separated into distinct subsets for training, validation, and testing. This process helps reduce bias from row ordering and supports better model assessment.
 
-## Code stages
+## What the project demonstrates
+- Working with NumPy arrays for data preprocessing
+- Applying mean normalization to feature data
+- Generating randomized row indices for unbiased selection
+- Using indexing and slicing to separate datasets
+- Organizing data into training, cross-validation, and test sets
 
-### 1. Create or load the dataset
-The project begins with a NumPy array containing the original feature data. This array represents the full dataset before preprocessing.
+## Code walkthrough
 
-### 2. Apply mean normalization
-The dataset is normalized so that feature values are centered and scaled more consistently. This helps prepare the data for machine learning tasks.
+### 1. Dataset setup
+The notebook begins with a dataset stored as a NumPy array. This serves as the original feature matrix before any preprocessing is applied.
 
-### 3. Generate randomized row indices
-A separate array of row indices is created and shuffled. These indices are used to select rows in random order instead of relying on the original arrangement of the dataset.
+### 2. Mean normalization
+The feature values are normalized to create a new array, `X_norm`. This step helps center the data and improves consistency across features, which is often useful before training machine learning models.
 
-### 4. Calculate split boundaries
-The code computes cutoff points for 60% and 80% of the dataset. These values define how the rows will be divided:
-- First 60% for training
-- Next 20% for cross-validation
-- Final 20% for testing
+### 3. Randomized row selection
+A separate array of row indices is created and randomized. Instead of splitting the dataset in its original order, the notebook uses these shuffled indices to select rows more fairly.
 
-### 5. Split the normalized dataset
-Using NumPy indexing and slicing, the normalized dataset is separated into:
+### 4. Split boundary calculation
+The code calculates cutoff points based on percentages of the dataset size:
+- 60% of the rows for training
+- 20% of the rows for cross-validation
+- 20% of the rows for testing
+
+These boundaries are stored as integer positions and used to divide the shuffled row indices.
+
+### 5. Data separation
+Using NumPy indexing, the normalized dataset is split into:
 - `X_train`
 - `X_crossVal`
 - `X_test`
 
-Each split keeps all columns while selecting different groups of rows.
+Each subset contains a different group of rows while preserving all feature columns.
 
 ## Tools used
 - Python
 - NumPy
 - Jupyter Notebook
 
-## File
+## File included
 - `Mean Normalization and Data Separation.ipynb`
 
 ## How to run
-1. Open Jupyter Notebook through Anaconda Navigator or Anaconda Prompt
+1. Open Jupyter Notebook using Anaconda Navigator or Anaconda Prompt
 2. Navigate to the project folder
-3. Open `Mean Normalization and Data Separation.ipynb`
+3. Launch and open `Mean Normalization and Data Separation.ipynb`
 
-## Purpose
-This project is intended as practice for understanding essential data preprocessing techniques used before training machine learning models.
+## Learning outcome
+This project strengthens understanding of foundational preprocessing concepts in machine learning, especially normalization, randomized selection, and structured dataset splitting using NumPy.
